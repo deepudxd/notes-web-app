@@ -1,12 +1,16 @@
 
+def add_new_note():
+    file=open("notes.json","w")
+    id=int(input("Enter Id of the Note:"))
+    title=input("Enter the title of the note:")
+    content=input("Enter the content of the note:")
 
+    file.write(f'''{{
+            "id":{id},
+            "title":"{title}",
+            "content":"{content}"
+    }}''')
 
-file=open("notes.json","w")
+    print("edited file")
 
-file.write("""{
-           id:1
-           title:"Note 1"
-           content:"Hey this is my first note"
-}""")
-
-print("edited file")
+add_new_note()
